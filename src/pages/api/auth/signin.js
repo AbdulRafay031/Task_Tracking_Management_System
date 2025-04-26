@@ -1,5 +1,5 @@
-import { connectDB } from "../../lib/config/db";
-import { signin } from "../../lib/controller/authController";
+import { connectDB } from "../../../lib/config/db";
+import { signin } from "../../../lib/controller/authController";
 
 export default async function handler(req, res) {
   try {
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       res.status(405).json({ message: "Method not allowed" });
     }
   } catch (error) {
-    console.error("API Error:", error); 
+    console.error("API Error:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 }

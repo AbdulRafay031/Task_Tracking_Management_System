@@ -1,5 +1,5 @@
-import { connectDB } from "../../lib/config/db";
-import { Task } from "../../lib/model/Task";
+import { connectDB } from "../../../lib/config/db";
+import { Task } from "../../../lib/model/Task";
 
 export default async function handler(req, res) {
   const { taskId } = req.query; // Get taskId from query
