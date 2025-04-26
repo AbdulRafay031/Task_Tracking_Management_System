@@ -34,7 +34,7 @@ export default function Signin() {
         <div className="hidden md:flex items-center justify-center bg-white h-screen">
           <div className="relative w-[700px] h-[650px]">
             <Image
-              src="/th.jpg"
+              src="/sy2.jpg"
               alt="Signin Illustration"
               fill
               className="object-cover "

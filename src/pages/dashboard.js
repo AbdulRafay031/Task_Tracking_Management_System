@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import TaskColumn from "../pages/Component/TaskColumn"; 
+import Link from "next/link";
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
+
 
   useEffect(() => {
     fetchTasks();
@@ -45,6 +47,13 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-red-900 to-purple-900 p-6">
     
+      {/* Logout Button */}
+      <Link href="/">
+        <button className="fixed top-4 right-4 bg-red-500 text-white p-2 rounded-full shadow-lg hover:bg-red-700 transition-colors">
+          Logout
+        </button>
+      </Link>
+      
       <div className="w-full text-center border-b-2 border-red-500 pb-4 mb-10">
         <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(255,0,0,1)]">
           Task Management Dashboard
