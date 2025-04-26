@@ -45,40 +45,39 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-red-900 to-purple-900 p-6">
     
-    <div className="w-full text-center border-b-2 border-red-500 pb-4 mb-10">
-      <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(255,0,0,1)]">
-        Task Management Dashboard
-      </h1>
+      <div className="w-full text-center border-b-2 border-red-500 pb-4 mb-10">
+        <h1 className="text-5xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(255,0,0,1)]">
+          Task Management Dashboard
+        </h1>
+      </div>
+    
+      {/* Task Columns - Responsiveness Added */}
+      <div className="flex flex-col sm:flex-row sm:justify-center sm:w-full gap-6 sm:gap-10">
+        <TaskColumn
+          title="To Do"
+          tasks={todoTasks}
+          status="todo"
+          onDropTask={onDropTask}
+          onDragStart={onDragStart}
+          onAddTask={onAddTask}
+        />
+        <TaskColumn
+          title="In Progress"
+          tasks={inProgressTasks}
+          status="inprogress"
+          onDropTask={onDropTask}
+          onDragStart={onDragStart}
+          onAddTask={onAddTask}
+        />
+        <TaskColumn
+          title="Completed"
+          tasks={doneTasks}
+          status="done"
+          onDropTask={onDropTask}
+          onDragStart={onDragStart}
+          onAddTask={onAddTask}
+        />
+      </div>
     </div>
-  
-    {/* Task Columns */}
-    <div className="flex justify-center w-full gap-6">
-      <TaskColumn
-        title="To Do"
-        tasks={todoTasks}
-        status="todo"
-        onDropTask={onDropTask}
-        onDragStart={onDragStart}
-        onAddTask={onAddTask}
-      />
-      <TaskColumn
-        title="In Progress"
-        tasks={inProgressTasks}
-        status="inprogress"
-        onDropTask={onDropTask}
-        onDragStart={onDragStart}
-        onAddTask={onAddTask}
-      />
-      <TaskColumn
-        title="Completed"
-        tasks={doneTasks}
-        status="done"
-        onDropTask={onDropTask}
-        onDragStart={onDragStart}
-        onAddTask={onAddTask}
-      />
-    </div>
-  </div>
-  
   );
 }
