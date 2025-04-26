@@ -72,7 +72,7 @@ export default function Signup() {
         <p className="mt-6 text-center text-sm text-gray-600">
           Already have an account?{" "}
           <span
-            onClick={() => router.push("/auth/signin")}
+            onClick={() => router.push("/auth/Signin")}
             className="text-green-600 hover:underline cursor-pointer"
           >
             Sign In
